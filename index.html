@@ -1,12 +1,410 @@
-<!-- http://www.brucelawson.co.uk/2010/a-minimal-html5-document/ -->
+﻿<!DOCTYPE html>
+<html lang="en">
 
-<!doctype html>
-<html lang=en>
+
+
 <head>
-<meta charset=utf-8>
-<title>blah</title>
+    <title>index</title>
+    <link href="CSS/style.css" rel="stylesheet" type="text/css">
 </head>
+
+
+
 <body>
-<p>I'm the content</p>
+
+    <audio controls id="top">
+        <!--audio-->
+        <source src="media/videoplayback_5.mp3" type="audio/mpeg">
+        <source src="Media/videoplayback_5.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- container -->
+    <div class="container">
+        <h2>
+
+
+            <a href="index.html">Eduardo Diaz Suarez</a>
+
+
+        </h2>
+        <h1>Portfolio</h1>
+        <ul>
+            <!--eduardo navigators-->
+            <li><a href="#About_Me">About Me</a></li>
+            <li><a href="#Skills">Skills</a></li>
+            <li><a href="#External_profiles">External profiles</a></li>
+        </ul>
+    </div>
+    <div id="About_Me">
+        <h2>About Me</h2>
+        <h4>|<a href="#top">Top</a>|
+            <!--eduardo skipped heading level for better look and made redundant links for better navigation-->
+            |<a href="#Skills">Skills</a>|
+            |<a href="#External_profiles">External profiles</a>|
+        </h4>
+
+        <p>I am Eduardo, I live in Lehigh Acres. My degree is software engineering, and my dream is to have my own tech corporation.
+        </p>
+        <h3>Featured scratch project:
+
+            <a href="https://scratch.mit.edu/projects/281833704/" target="_blank">
+                Module D hard core fighter 2080 beta</a></h3>
+        <!--link to scratch-->
+
+        <a href="https://scratch.mit.edu/projects/281833704/" target="_blank"><img src=Media/Untitled.png width=300 height=300 alt="Featured scratch project: Module D hard core fighter 2080 beta"></a>
+        <!--image and link to scratch-->
+
+
+        <h3>Favorite videogame:</h3>
+        <video width="320" height="240" controls>
+            <source src="Media/DOTA%202%20-%20Official%20Trailer%20(Mac,%20PC).mp4" type="video/mp4">
+            <!--video-->
+            Your browser does not support the video tag.
+        </video>
+        <p>
+            <a href="Media/report.pdf" target="_blank">
+                <!--eduardo link to pdf is svg element-->
+                <svg width="300" height="55">
+                    <rect width="300" height="55" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" /><text fill="yellow" font-size="32" font-family="Verdana" x="10" y="40">Field Report PDF</text>
+                </svg></a></p>
+    </div>
+    <div id="Skills">
+        <h2>Skills</h2>
+        <h4>|<a href="#top">Top</a>|
+            <!--eduardo skipped heading level for better look and made redundant links for better navigation-->
+            |<a href="#About_Me">About Me</a>|
+
+            |<a href="#External_profiles">External profiles</a>|
+        </h4>
+
+        <ul>
+            <li>Time Management</li>
+            <li>Grit and Growth Mindset</li>
+            <li>Logic and Data Representation</li>
+            <li>HTML and CSS Application</li>
+        </ul>
+    </div>
+    <div id="External_profiles">
+        <h2>External profiles</h2>
+        <h4>|<a href="#top">Top</a>|
+            <!--eduardo skipped heading level for better look and made redundant links for better navigation-->
+            |<a href="#About_Me">About Me</a>|
+            |<a href="#Skills">Skills</a>|
+
+        </h4>
+
+        <ul>
+            <li> <a href="https://www.codecademy.com/thedragon0122" target="_blank">Codecademy</a></li>
+            <!--codecademy-->
+            <li> <a href="https://www.linkedin.com/in/eduardo-diaz-suarez-a9745917b/" target="_blank">LinkedIn</a></li>
+        </ul>
+        <!--eduardo linkedin-->
+    </div>
+
+
+
+
+
+    <footer>
+        <div id="caesar" style="width: 100%; overflow-y: hidden;" class="cipher">
+            <script>
+                //caesar cipher and javascript program using IPO starts here
+
+                encryptcount = 0;
+                decryptcount = 0;
+
+                function chooseAlphabet() {
+                    var alpha = document.getElementById("alpha-choice");
+                    var alphaChoice = alpha.options[alpha.selectedIndex].value;
+                    document.getElementById("alphabet").value = alphaChoice;
+                    document.getElementById("wrapper").innerHTML = "";
+                }
+
+                function keyChange() {
+                    document.getElementById("wrapper").innerHTML = "";
+                }
+
+                function blocksBtn() {
+                    if (document.getElementById("blocks").checked == true) {
+                        document.getElementById("removeChar").checked = true;
+                        document.getElementById("removeChar").disabled = true;
+                    } else if (document.getElementById("blocks").checked == false) {
+                        document.getElementById("removeChar").disabled = false;
+                    }
+                }
+
+                function resetEncryptCount() {
+                    encryptcount = 0;
+                    document.getElementById("ciphertext").value = "";
+                }
+
+                function resetDecryptCount() {
+                    decryptcount = 0;
+                    document.getElementById("plaintext").value = "";
+                }
+
+                function belongsTo(character, checkstring) {
+                    p = 0;
+                    for (k = 0; k < checkstring.length; k++) {
+                        if (character == checkstring.substr(k, character.length)) {
+                            p = p + 1;
+                        }
+                    }
+                    if (p > 0) {
+                        return "true";
+                    } else {
+                        return "false";
+                    }
+                }
+
+                function shift(palphabet, keyUsed) {
+                    palph = palphabet;
+                    keyn = (parseInt(keyUsed) + 3 * palph.length) % palph.length;
+                    calph = palph.substring(keyn, palph.length) + palph.substring(0, keyn);
+                    return calph;
+                }
+
+                function reverseString(stringUsed) {
+                    reversed = "";
+                    for (l = stringUsed.length - 1; l >= 0; l--) {
+                        reversed += stringUsed.substr(l, 1);
+                    }
+                    return reversed;
+                }
+
+                function subs(palphabet, calphabet, ptext) {
+                    ctext = "";
+                    for (i = 0; i < ptext.length; i++) { //eduardo javascript loop here!
+                        a = ptext.substr(i, 1);
+                        if (belongsTo(a, palphabet) == "true") {
+                            for (j = 0; j < palphabet.length; j++) {
+                                b = palphabet.substr(j, 1);
+                                c = calphabet.substr(j, 1);
+                                if (a == b) {
+                                    ctext = ctext + c;
+                                }
+                            }
+                        } else {
+                            ctext = ctext + a;
+                        }
+                    }
+
+                    return ctext;
+                }
+
+                function remove(stringUsed, alphabetUsed) {
+                    m = 0;
+                    newstring = stringUsed;
+                    while (m < newstring.length) {
+                        if (belongsTo(newstring.substr(m, 1), alphabetUsed) == "false") {
+                            newstring = newstring.substring(0, m) + newstring.substring(m + 1, newstring.length);
+                        } else {
+                            m++;
+                        }
+                    }
+                    return newstring;
+                }
+
+                function blocks(string) {
+                    newstring = string;
+                    strlength = newstring.length;
+                    d = 5;
+                    while (d < strlength) {
+                        newstring = newstring.substring(0, d) + " " + newstring.substring(d, strlength);
+                        strlength = newstring.length;
+                        d = d + 6;
+                    }
+                    return newstring;
+                }
+
+
+
+                function encrypt() {
+                    if (document.getElementById("alphabet").value == "") {
+                        alert("Choose characters, or write your own.");
+                    } else {
+                        key1 = document.getElementById("key").value;
+                        alphabet1 = document.getElementById("alphabet").value.toLowerCase();
+                        alphabet2 = shift(alphabet1.toUpperCase(), key1);
+                        plain = document.getElementById("plaintext").value.toLowerCase();
+
+                        if (document.getElementById("removeChar").checked == true) {
+                            plain1 = remove(plain, alphabet1);
+                        } else {
+                            plain1 = plain;
+                        }
+
+                        if (document.getElementById("blocks").checked == true) {
+                            plain1 = remove(plain, alphabet1);
+                            plain2 = blocks(plain1);
+                        } else {
+                            plain2 = plain1;
+                        }
+
+
+                        if (document.getElementById("slow-encrypt").checked == false) {
+                            document.getElementById("ciphertext").value = subs(alphabet1, alphabet2, plain2);
+                        }
+                        if (document.getElementById("slow-encrypt").checked == true) {
+                            if (encryptcount >= plain2.length) {
+                                alert("You have finished the message. Press Reset or deselect Slow Encrypt");
+                            } else {
+                                document.getElementById("ciphertext").value = document.getElementById("ciphertext").value + subs(alphabet1, alphabet2, plain2.substr(encryptcount, 1));
+                                encryptcount = encryptcount + 1;
+                            }
+                        }
+
+                    }
+                }
+
+                function decrypt() {
+                    if (document.getElementById("alphabet").value == "") {
+                        alert("Choose characters, write your own.");
+                    } else {
+                        key1 = document.getElementById("key").value;
+                        alphabet1 = document.getElementById("alphabet").value.toLowerCase();
+                        alphabet2 = shift(alphabet1.toUpperCase(), key1);
+                        cipher = document.getElementById("ciphertext").value.toUpperCase();
+
+                        if (document.getElementById("slow-decrypt").checked == false) {
+                            document.getElementById("plaintext").value = subs(alphabet2, alphabet1, cipher);
+                        }
+                        if (document.getElementById("slow-decrypt").checked == true) {
+                            if (decryptcount >= cipher.length) {
+                                alert("You have finished the message. Press Reset or deselect Slow Decrypt");
+                            } else {
+                                document.getElementById("plaintext").value = document.getElementById("plaintext").value + subs(alphabet2, alphabet1, cipher.substr(decryptcount, 1));
+                                decryptcount = decryptcount + 1;
+                            }
+                        }
+
+                    }
+                }
+
+                function showCiphertextAlphabet() {
+                    key1 = document.getElementById("key").value;
+                    alphabet1 = document.getElementById("alphabet").value.toLowerCase();
+                    alphabet2 = shift(alphabet1.toUpperCase(), key1);
+
+                    cipherAlphabet = "<table style=\"color:black;background-color:lightgray\" border=\"1\"><tr><td>Plaintext Alphabet</td>";
+                    for (i = 0; i < alphabet1.length; i++) {
+                        cipherAlphabet += "<td width=\"20px\" style=\"text-align:center\">";
+                        cipherAlphabet += alphabet1.substr(i, 1);
+                        cipherAlphabet += "</td>";
+                    }
+                    cipherAlphabet += "</tr><tr><td>Ciphertext Alphabet</td>";
+                    for (i = 0; i < alphabet2.length; i++) {
+                        cipherAlphabet += "<td width=\"50px\" style=\"text-align:center\">";
+                        cipherAlphabet += alphabet2.substr(i, 1);
+                        cipherAlphabet += "</td>";
+                    }
+                    cipherAlphabet += "</tr></table>";
+
+                    document.getElementById("wrapper").innerHTML = cipherAlphabet;
+                }
+
+                function resetFunction() {
+                    document.getElementById("alphabet").value = "abcdefghijklmnopqrstuvwxyz";
+                    document.getElementById("alpha-choice").selectedIndex = "0";
+                    document.getElementById("plaintext").value = "";
+                    document.getElementById("key").value = 0;
+                    document.getElementById("slow-encrypt").checked = false;
+                    document.getElementById("ciphertext").value = "";
+                    document.getElementById("slow-decrypt").checked = false;
+                    document.getElementById("removeChar").checked = false;
+                    document.getElementById("blocks").checked = false;
+                    document.getElementById("removeChar").disabled = false;
+                    encryptcount = 0;
+                    decryptcount = 0;
+                    document.getElementById("wrapper").innerHTML = "";
+                }
+
+            </script>
+
+
+            <form>
+                <fieldset data-role="controlgroup" style="min-width:200px">
+                    <legend style="color:white">Caesar Cipher:</legend>
+                    <select name="alpha-choice" id="alpha-choice" onchange="chooseAlphabet()">
+                        <option selected="" id="alpha-standard" value="abcdefghijklmnopqrstuvwxyz">English normal</option>
+                        <option id="alpha-punctuation" value=" .,?!abcdefghijklmnopqrstuvwxyz">With common punctuations</option>
+                        <option id="alpha-numbers" value="abcdefghijklmnopqrstuvwxyz0123456789">With numbers</option>
+                        <option id="alpha-all" value=" .,?!abcdefghijklmnopqrstuvwxyz0123456789">With common punctuations and numbers</option>
+                        <option id="alpha-own" value="">Custom</option>
+                    </select>
+                    <br>
+                    <input id="alphabet" value="abcdefghijklmnopqrstuvwxyz" style="width:350px;max-width:100%"><br><br>
+                    <label>Key:</label>
+                    <input id="key" type="number" value="0" min="-52" max="52" onchange="keyChange()" style="width:50px;max-width:100%">
+                </fieldset>
+                <fieldset data-role="controlgroup">
+                    <legend style="color:white">Readable text:</legend>
+                    <div style="display:inline-block;width:70%;min-width:200px">
+                        <textarea id="plaintext" style="width:100%" rows="5"></textarea>
+                    </div>
+                    <div style="display:inline-block;vertical-align:top">
+                        <input type="button" id="encryptBtn" value="Encrypt" onclick="encrypt()" class="button button1"><br>
+                        <label style="color:white"><input type="checkbox" id="slow-encrypt" onchange="resetEncryptCount()">Manual Encrypt</label>
+                    </div>
+                </fieldset>
+                <fieldset data-role="controlgroup">
+                    <legend style="color:white">Encrypted text:</legend>
+                    <div style="display:inline-block;width:70%;min-width:200px">
+                        <textarea id="ciphertext" style="width:100%" rows="5"></textarea>
+                    </div>
+                    <div style="display:inline-block;vertical-align:top">
+                        <input type="button" id="decryptBtn" value="Decrypt" onclick="decrypt()" class="button button3"><br>
+                        <label style="color:white"><input type="checkbox" id="slow-decrypt" onchange="resetDecryptCount()">Manual Decrypt</label>
+                    </div>
+                </fieldset>
+                <fieldset data-role="controlgroup">
+                    <legend style="color:white">Menu:</legend>
+
+                    <div style="display:inline-block">
+                        <input type="button" id="resetBtn" value="Reset" onclick="resetFunction()" class="button button2">
+                    </div>
+                    <div style="display:inline-block">
+                        <label style="color:white"><input type="checkbox" id="removeChar">Remove unwanted characters</label><br>
+                        <label style="color:white"><input type="checkbox" id="blocks" onclick="blocksBtn()">Cipher in blocks of five</label>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <a href="accessibility.html">
+            <canvas id="myCanvas" width="230" height="64" style="border:10px solid black;">
+                <!--canvas here-->
+                Your browser does not support the canvas element.
+            </canvas></a>
+
+        <script>
+            /**eduardo javascript for canvas*/
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            ctx.font = "30px Comic Sans MS";
+            ctx.fillStyle = "red";
+            ctx.textAlign = "center";
+            ctx.fillText("Accessibility", canvas.width / 2, canvas.height / 1.5); //text for canvas
+
+        </script>
+        <p><a href="http://www.w3.org/html/logo/">
+                <img src="https://www.w3.org/html/logo/badge/html5-badge-h-css3.png" width="133" height="64" alt="HTML5 Powered with CSS3 / Styling" title="HTML5 Powered with CSS3 / Styling">
+            </a></p>
+        <p>
+            <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" />
+            </a>
+        </p>
+
+    </footer>
+    <!--Eduardo Sources: -"https://crypto.interactive-maths.com/caesar-shift-cipher.html"
+-"https://www.w3schools.com/"
+-"https://www.hackerrank.com"
+-"https://google.github.io/styleguide/javascriptguide.xml"
+-"http://validator.w3.org/#validate_by_input"
+-"http://jigsaw.w3.org/css-validator/#validate_by_input"
+-"http://wave.webaim.org"-->
+
 </body>
+
 </html>

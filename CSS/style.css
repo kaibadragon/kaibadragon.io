@@ -1,0 +1,85 @@
+html {}
+
+body/*eduardo; style for body in general*/ {
+    color: white;
+    font-size: 32px;
+    display: grid;
+    position: relative;
+    line-height: 2.0;
+    background-color: midnightblue;
+    background-blend-mode: darken;
+    vertical-align: middle;
+    text-align: center;
+}
+
+
+
+th {
+    background-color: black;
+    background-size: contain;
+    display: grid;
+    text-align: center
+}
+
+
+ 
+.container {
+    font-family: monospace, fantasy;
+    font-weight: bolder;
+}
+
+h2/*Eduardo: style for section headings*/ {
+    color: red;
+
+    background-color: black;
+    background-size: auto;
+}
+
+
+a {
+    color: white;
+    background-clip: inherit;
+
+    background-size: auto;
+    font-style: italic
+}
+
+
+ul/*eduardo; for bullet points*/ {
+    text-align: justify
+}
+
+
+h4 {
+    background-color: black
+}
+
+h4 a {
+    background-color: black;
+}
+
+#Navigation {
+    color: yellow;
+}
+
+#Images {
+    color: yellow;
+}
+
+#Videos {
+    color: yellow;
+}
+
+#Music {
+    color: yellow;
+}
+
+#Report {
+    color: yellow;
+}
+
+#External_links {
+    color: yellow;
+}
+
+
